@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: foodease
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: Juyel@1997
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+
+
+logging:
+  file:
+    path: logs/
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} %m%n"
+    file: "%d %-5level [%thread] %logger : %msg%n"
+  level:
+    web: error
+    root: info
+    sql: error
+
+
+
+
+
+#Secret Key
+Secret:
+  key: "fkgnkvbkdfgrthgsfvfghjgnfdhguigndfjvkndffdkngdfkj"
+
+tokenExpireInTime : 1000 * 60 * 60 * 24
