@@ -18,8 +18,8 @@ public class FoodController {
 
     @GetMapping("/getAll/{restaurantId}")
     public ResponseEntity<List<Food>> getAllFood(@PathVariable Long restaurantId,
-                                                 boolean isVeg,boolean isNonVeg,
-                                                 boolean isSeasoned, String category) throws Exception {
+                                                @RequestParam boolean isVeg,@RequestParam boolean isNonVeg,
+                                                @RequestParam boolean isSeasoned, @RequestParam (required = false) String category) throws Exception {
         List<Food> foodList = foodService.getAllFood(restaurantId,isVeg,isNonVeg,isSeasoned,category);
         return ResponseEntity.ok(foodList);
     }
