@@ -90,9 +90,7 @@ public class RestaurantServiceImpl implements RestaurantService {
         dto.setDescription(restaurant.getAbout());
         dto.setImages(restaurant.getImages());
 
-        if (user.getFavorites().contains(dto)) user.getFavorites().remove(dto);
-        else user.getFavorites().add(dto);
-
+        user.addOrRemoveFavorite(dto);
         userRepository.save(user);
         return dto;
     }

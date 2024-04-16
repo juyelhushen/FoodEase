@@ -9,5 +9,4 @@ public class FoodeaseBackendApplication {
     public static void main(String[] args) {
         SpringApplication.run(FoodeaseBackendApplication.class, args);
     }
-
 }

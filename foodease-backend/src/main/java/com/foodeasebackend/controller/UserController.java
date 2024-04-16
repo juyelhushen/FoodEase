@@ -7,10 +7,9 @@ import com.foodeasebackend.payload.SignupRequest;
 import com.foodeasebackend.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.NoSuchElementException;
 
 @RestController
 @RequestMapping("/api/user")
@@ -27,5 +26,11 @@ public class UserController {
     @PostMapping("/signin")
     public ResponseEntity<AuthResponse> signIn(@RequestBody LoginRequest request) {
         return userService.signIn(request);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<User> getUserById(@PathVariable Long id) throws NoSuchElementException {
+        User user =  userService.findByUserId(id);
+        return ResponseEntity.ok(user);
     }
 }

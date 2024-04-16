@@ -8,7 +8,9 @@ import jakarta.validation.constraints.Email;
 import lombok.*;
 
 import java.util.List;
+import java.util.Set;
 import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.concurrent.CopyOnWriteArraySet;
 
 @Entity
 @Table(name = "users")
@@ -35,9 +37,22 @@ public class User extends BaseEntity {
     private List<Order> orders = new CopyOnWriteArrayList<>();
 
     @ElementCollection
-    private List<RestaurantDto> favorites = new CopyOnWriteArrayList<>();
+    private Set<RestaurantDto> favorites = new CopyOnWriteArraySet<>();
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Address> address = new CopyOnWriteArrayList<>();
+
+    public void addOrRemoveFavorite(RestaurantDto dto) {
+        boolean isFav = false;
+        Set<RestaurantDto> favorites = getFavorites();
+        for (RestaurantDto favorite : favorites) {
+            if (favorite.getId() == dto.getId()) {
+                isFav = true;
+                break;
+            }
+        }
+        if(isFav) favorites.removeIf(fav -> fav.getId() == dto.getId());
+        else favorites.add(dto);
+    }
 
 }
