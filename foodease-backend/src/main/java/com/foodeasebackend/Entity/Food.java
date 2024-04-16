@@ -1,10 +1,7 @@
 package com.foodeasebackend.Entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -12,6 +9,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "food")
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Setter
@@ -32,6 +30,7 @@ public class Food extends BaseEntity {
     @ManyToOne
     private Restaurant restaurant;
     private boolean isAvailable;
+    private boolean isNonVeg;
     private boolean isVegetarian;
     private boolean isSeasoned;
 
