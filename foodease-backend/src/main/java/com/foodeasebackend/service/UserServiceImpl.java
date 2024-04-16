@@ -23,6 +23,9 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.NoSuchElementException;
+import java.util.Optional;
+
 @Service
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
@@ -100,5 +103,10 @@ public class UserServiceImpl implements UserService {
         } catch (BadCredentialsException e) {
             throw new UsernameNotFoundException("invalid user request !");
         }
+    }
+
+    @Override
+    public User findByUserId(Long userId) throws NoSuchElementException {
+        return userRepository.findById(userId).orElseThrow();
     }
 }

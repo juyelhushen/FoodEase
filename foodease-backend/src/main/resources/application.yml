@@ -32,5 +32,7 @@ logging:
 #Secret Key
 Secret:
   key: "fkgnkvbkdfgrthgsfvfghjgnfdhguigndfjvkndffdkngdfkj"
+server:
+  port: 8081
 
-tokenExpireInTime : 1000 * 60 * 60 * 24
+serviceBUrl: http://calendertamil:8080
