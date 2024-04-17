@@ -25,5 +25,5 @@ public class IngredientsItem extends BaseEntity {
     @JsonIgnore
     private Restaurant restaurant;
 
-    private boolean isStock = true;
+    private boolean isInStock = true;
 }

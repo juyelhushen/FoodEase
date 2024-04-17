@@ -17,6 +17,7 @@ import java.util.List;
 @Setter
 @Getter
 public class IngredientCategory extends BaseEntity {
+
     private String name;
 
     @JsonIgnore
