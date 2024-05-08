@@ -1,0 +1,13 @@
+
+// .mat-radio-button .mat-accent .mat-radio-checked .mat-radio-outer-circle, .mat-radio-outer-circle {
+//   border-color: red !important;
+// }
+
+// .mat-radio-button .mat-accent .mat-radio-inner-button {
+//   background-color: red !important;
+// }
+
+.mat-mdc-radio-button.mat-primary {
+    --mdc-radio-unselected-icon-color: rgba(247, 241, 241, 0.54);
+    --mdc-radio-unselected-hover-icon-color: rgba(132, 54, 177, 0.54);
+}

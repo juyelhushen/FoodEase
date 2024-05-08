@@ -1,1 +1,48 @@
-<p>home works!</p>
+<div class="home">
+  <!-- home banner  -->
+
+  <section class="banner -z-50 relative flex justify-center items-center">
+    <div class="w-[50vw] z-10 text-center">
+      <p class="text-2xl lg:text-6xl font-bold z-10 py-5">Food Ease</p>
+      <p class="z-10 text-gray-300 text-xl lg:text-4xl">
+        Taste the convenience : Food , fast and Delivered.
+      </p>
+    </div>
+    <div class="overlay"></div>
+    <div class="fadout"></div>
+  </section>
+
+  <!-- Food Carousel  -->
+
+  <section class="p-10 lg:py-10 lg:px-10">
+    <p class="text-2xl text-gray-400 py-3 pb-5">Top Meals</p>
+    <ngx-slick-carousel
+      class="carousel"
+      #slickModal="slick-carousel"
+      [config]="slideConfig"
+    >
+      @for (slide of foodSlides; track slide.name) {
+      <div ngxSlickItem class="slide">
+        <app-carousel-item [image]="slide.image" [name]="slide.name" />
+      </div>
+      }
+    </ngx-slick-carousel>
+  </section>
+
+  <!-- Favorite Restaurant -->
+
+  <section class="p-10 lg:py-10 lg:px-10 rounded-lg shadow">
+    <p class="text-2xl text-gray-400 py-3 pb-5">
+      Order from our Handppicked favorites
+    </p>
+    <div class="p-5 flex flex-wrap items-center  gap-10">
+      @for (item of resCard; track $index) {
+      <app-restaurant-card
+        [status]="status"
+        [name]="item.name"
+        [image]="item.image"
+      />
+      }
+    </div>
+  </section>
+</div>

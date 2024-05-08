@@ -1,0 +1,23 @@
+.mat-card-header {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .mat-card:hover .mat-card-header {
+    opacity: 1;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .mat-card-header:hover {
+    animation: fadeInUp 0.3s ease-in-out;
+  }

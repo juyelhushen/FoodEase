@@ -1,0 +1,51 @@
+<mat-accordion>
+  <mat-expansion-panel
+    class="p-2"
+    [expanded]="step === 0"
+    (opened)="setStep(0)"
+  >
+    <mat-expansion-panel-header
+      class="min-h-[7rem] lg:flex items-center justify-between"
+    >
+      <div class="lg:flex items-center lg:gap-5">
+        <img
+          class="w-[7rem] h-[7rem] object-cover"
+          src="https://img.freepik.com/premium-photo/amazing-delicious-cheese-burger_727939-299.jpg"
+          alt=""
+          srcset=""
+        />
+        <div class="flex flex-col space-y-2">
+          <mat-panel-title
+            ><span class="text-white tracking-widest text-xl font-semibold"
+              >Burger</span
+            >
+          </mat-panel-title>
+          <p class="text-gray-200">₹400</p>
+          <mat-panel-description>
+            <p class='text-gray-500'>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam qui, quaerat porro deleniti doloremque eveniet!
+            </p>
+          </mat-panel-description>
+        </div>
+      </div>
+    </mat-expansion-panel-header>
+
+    <form class="py-5">
+      <div class="flex flex-wrap gap-5">
+        @for (cat of Category; track $index) {
+        <div>
+          <p class="text-white">{{ cat.category }}</p>
+          <div class="flex flex-col">
+            @for (ing of cat.ingredients; track $index) {
+            <mat-checkbox  color='primary'>{{ ing }}</mat-checkbox>
+            }
+          </div>
+        </div>
+        }
+      </div>
+      <div class="button">
+        <button mat-flat-button color="primary">Add To Cart</button>
+      </div>
+    </form>
+  </mat-expansion-panel>
+</mat-accordion>

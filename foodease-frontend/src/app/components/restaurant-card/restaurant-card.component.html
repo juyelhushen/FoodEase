@@ -1,0 +1,29 @@
+<mat-card class="w-[17rem]">
+  <div
+    [class]="true ? 'cursor-pointer relative' : 'cursor-not-allowed relative'"
+  >
+    <img
+      mat-card-image
+      class="w-full relative h-[10rem] rounded-t-md object-cover"
+      [src]="image"
+      alt="Photo of a Shiba Inu"
+    />
+    <span class="absolute top-1 right-1">
+      <mat-chip>{{ status }}</mat-chip>
+    </span>
+  </div>
+
+  <mat-card-header class="bg-gray-950">
+    <mat-card-title class="font-bold">{{ name }}</mat-card-title>
+  </mat-card-header>
+  <div
+    class="subHeader p-4 textPart bg-gray-950 lg:flex w-full justify-between items-center gap-3"
+  >
+    <p class="text-gray-500 text-sm">
+      Craving it at all? Dive into our global fla...
+    </p>
+    <button mat-icon-button class="relative bottom-1" color="warn">
+      <mat-icon>favorite_border</mat-icon>
+    </button>
+  </div>
+</mat-card>

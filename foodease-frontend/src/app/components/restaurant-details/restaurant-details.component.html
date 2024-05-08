@@ -1,0 +1,91 @@
+<div class="px-5 lg:px-20">
+  <section>
+    <h3 class="relative top-15 text-gray-500 py-2">
+      Home/Indian/Indian Fast Food/3
+    </h3>
+    <div>
+      <mat-grid-list cols="2" rowHeight="40vh" gutterSize="10px">
+        <mat-grid-tile colspan="2">
+          <img
+            class="w-full h-[40vh] object-cover"
+            src="https://images.pexels.com/photos/1237073/pexels-photo-1237073.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt=""
+          />
+        </mat-grid-tile>
+        <mat-grid-tile colspan="1">
+          <img
+            class="w-full object-cover h-[40vh]"
+            src="https://images.pexels.com/photos/2074130/pexels-photo-2074130.jpeg?auto=compress&cs=tinysrgb&w=600"
+            alt=""
+            srcset=""
+          />
+        </mat-grid-tile>
+        <mat-grid-tile colspan="1">
+          <img
+            class="w-full object-cover h-[40vh]"
+            src="https://images.pexels.com/photos/3201921/pexels-photo-3201921.jpeg?auto=compress&cs=tinysrgb&w=600"
+            alt=""
+            srcset=""
+          />
+        </mat-grid-tile>
+      </mat-grid-list>
+    </div>
+  </section>
+
+  <!-- Restaurant Detail   -->
+
+  <section>
+    <div class="pt-3 pb-5">
+      <h2 class="text-4xl font-semibold">Indian Fast Food</h2>
+      <p class="text-gray-500 mt-1 break-words">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime magni,
+        magnam quisquam eligendi possimus accusamus suscipit voluptatum sit
+        facilis recusandae architecto quia eius harum optio perspiciatis.
+        Accusantium et dolor quis!
+      </p>
+      <div class="flex flex-row items-center mt-3 space-x-3 text-gray-500">
+        <mat-icon>location_on</mat-icon>
+        <span>Vadapalani, Param Mall, Chennai</span>
+      </div>
+
+      <div class="flex flex-row mt-3 items-center space-x-3 text-gray-500">
+        <mat-icon>access_time</mat-icon>
+        <span>MON - SUN : 10 A.M to 10 P.M</span>
+      </div>
+    </div>
+  </section>
+  <mat-divider class="bg-gray-500" role="separator"></mat-divider>
+
+  <section class="pt-[2rem] lg:flex relative">
+    <div class="flex flex-col space-y-5 lg:w-[20%] filter pb-5">
+      <label>Food Type</label>
+      <mat-radio-group
+        class="flex flex-col items-start"
+        [(ngModel)]="favoriteSeason"
+      >
+        @for (type of categoryType; track categoryType) {
+        <mat-radio-button [value]="type.value">
+          <span class="text-white">{{ type.lebel }}</span>
+        </mat-radio-button>
+        }
+      </mat-radio-group>
+      <mat-divider class="bg-gray-500" role="separator" />
+      <label>Food Category</label>
+      <mat-radio-group
+        class="flex flex-col items-start"
+        [(ngModel)]="favoriteSeason"
+      >
+        @for (category of categories; track categories) {
+        <mat-radio-button [value]="category">
+          <span class="text-white capitalize">{{ category }}</span>
+        </mat-radio-button>
+        }
+      </mat-radio-group>
+    </div>
+    <div class="flex flex-col gap-2 lg:w-[80%] lg:pl-10">
+      @for (item of menucard; track $index) {
+        <app-menu-card></app-menu-card>
+      }
+    </div>
+  </section>
+</div>

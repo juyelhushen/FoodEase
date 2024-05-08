@@ -1,0 +1,22 @@
+@import "../../../../../theme.scss";
+
+mat-accordion {
+
+  mat-expansion-panel {
+    background: $text-gray-500;
+  }
+
+}
+
+.mat-mdc-checkbox {
+  --mdc-form-field-label-text-color: rgba(236, 225, 225, 0.87);
+}
+
+.mat-mdc-checkbox.mat-primary {
+
+  --mdc-checkbox-unselected-focus-icon-color: rgba(132, 54, 177, 0.54);
+  --mdc-checkbox-unselected-hover-icon-color: rgba(132, 54, 177, 0.54);
+  --mdc-checkbox-unselected-icon-color: rgba(238, 233, 241, 0.54);
+  --mdc-checkbox-unselected-pressed-icon-color: rgba(236, 225, 225, 0.87);
+
+}

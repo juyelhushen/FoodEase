@@ -1,14 +1,17 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
-import { RestaurantComponent } from './components/restaurant/restaurant.component';
+import { RestaurantDetailsComponent } from './components/restaurant-details/restaurant-details.component';
 
 export const routes: Routes = [
   {
     path: '',
-    component: HomeComponent,
+    component: RestaurantDetailsComponent,
   },
-  {
-    path: 'restaurant',
-    component: RestaurantComponent,
-  },
+  // {
+  //   path: 'restaurant',
+  //   loadChildren: () =>
+  //     import('./components/restaurant-details/restaurant-details.module').then(
+  //       (m) => m.RestaurantDetailsModule
+  //     ),
+  // },
 ];
