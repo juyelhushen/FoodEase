@@ -1,0 +1,48 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row fxLayout="row" fxLayoutGap="gappx">
+    <span>Add New Address</span>
+    <span class="spacer"></span>
+    <button class="mat-dialog-close" mat-icon-button mat-dialog-close>
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-dialog-content [formGroup]="addressForm">
+  <mat-form-field appearance="fill" class="w-[100%]">
+    <mat-label>Street Address</mat-label>
+    <input type="text" matInput formControlName="streetAddress" />
+    <mat-hint>ex: door no - 10, block - 10, kk nagar...</mat-hint>
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="w-[100%]">
+    <mat-label>City</mat-label>
+    <input type="text" matInput formControlName="city" />
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="w-[100%]">
+    <mat-label>State</mat-label>
+    <input type="text" matInput formControlName="state" />
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="w-[100%]">
+    <mat-label>Pincpde</mat-label>
+    <input type="text" formControlName="pin" maxlength="6" matInput />
+    <mat-hint>ex- 123456</mat-hint>
+
+    @if('addressForm.controls.pin.touched && addressForm.controls.pin.invalid')
+    {
+    <mat-error>it mandatory to fill it.</mat-error>
+    }
+  </mat-form-field>
+</mat-dialog-content>
+
+<mat-dialog-actions [align]="'center'">
+  <button
+    type="submit"
+    mat-raised-button
+    color="primary"
+    [disabled]="addressForm.invalid"
+    (click)="addAddress()"
+  >
+    Add
+  </button>
+  <button mat-stroked-button color="warn" mat-dialog-close>Cancel</button>
+</mat-dialog-actions>

@@ -37,4 +37,8 @@ export class MenuCardComponent {
   setStep(index: number) {
     this.step = index;
   }
+
+  handleCheckboxOnChange = (value:any) => {
+    alert(value);      
+  }
 }

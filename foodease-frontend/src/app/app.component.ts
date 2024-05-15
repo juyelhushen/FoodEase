@@ -23,4 +23,6 @@ import { RestaurantDetailsModule } from './components/restaurant-details/restaur
 })
 export class AppComponent {
   title = 'foodease-frontend';
+
+  isSpecial: boolean = true;
 }

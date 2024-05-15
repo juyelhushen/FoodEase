@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { RestaurantDetailsComponent } from './components/restaurant-details/restaurant-details.component';
+import { CartComponent } from './components/cart/cart.component';
 
 export const routes: Routes = [
   {
@@ -8,10 +9,10 @@ export const routes: Routes = [
     component: RestaurantDetailsComponent,
   },
   // {
-  //   path: 'restaurant',
+  //   path: 'dashboard',
   //   loadChildren: () =>
-  //     import('./components/restaurant-details/restaurant-details.module').then(
-  //       (m) => m.RestaurantDetailsModule
+  //     import('./components/dashboard/dashboard-routing.module').then(
+  //       (m) => m.DashboardRoutingModule
   //     ),
   // },
 ];

@@ -1,0 +1,26 @@
+<div class="shadow-2xl shadow-gray-700">
+  <mat-card class="flex flex-row rounded-2xl w-64 p-2 bg-gray-900 gap-3">
+    <mat-card-header>
+      <mat-card-title class="text-gray-300">
+        <div class="flex gap-1 items-center">
+          <mat-icon>home</mat-icon>
+          <span matLine>Address</span>
+        </div>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="text-gray-500"
+      >Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius ipsum non
+      veniam recusandae, eaque rerum.</mat-card-content
+    >
+    <mat-card-actions class="w-full" [hidden]="isNotAddress">
+      <button
+        mat-raised-button
+        class="w-full opacity-75 hover:opacity-100"
+        color="primary"
+        (click)="selectAddress()"
+      >
+        Select
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

@@ -1,0 +1,53 @@
+<main class="flex justify-between">
+  <section class="lg:w-[30%] space-y-6 lg:min-h-screen pt-10">
+    <div class="flex flex-col flex-auto gap-3">
+      @for (item of [1,1]; track $index) {
+      <app-cart-item />
+      }
+    </div>
+    <mat-divider class="bg-gray-500 my-2" role="separator"></mat-divider>
+    <div class="billDetails px-5 text-sm">
+      <p class="font-extralight py-5">Bill Details</p>
+      <div class="space-y-3 px-1">
+        <div class="flex justify-between text-gray-400">
+          <p>Item Total :</p>
+          <p>₹1450</p>
+        </div>
+        <div class="flex justify-between text-gray-400">
+          <p>Delivery fee :</p>
+          <p>₹39</p>
+        </div>
+        <div class="flex justify-between text-gray-400">
+          <p>GST & Restaurant's Charges :</p>
+          <p>₹33</p>
+        </div>
+        <mat-divider class="bg-gray-500 my-2" role="separator" />
+        <div class="flex justify-between text-gray-400">
+          <p>SubTotal :</p>
+          <p>₹1600</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <mat-divider class="bg-gray-500 my-2" role="separator" [vertical]="true" />
+  <section class="lg:w-[70%] flex justify-center px-5 pb-10 lg:pb-0">
+    <div class="address flex flex-col gap-3">
+      <h1 class="text-center font-semibold text-2xl py-10">
+        Choose Delivery Address
+      </h1>
+      <div class="flex flex-row gap-2 flex-wrap justify-center">
+        @for (item of [1,1,1]; track $index) {
+        <app-address-card [isNotAddress]="false" />
+        }
+      </div>
+
+      <div class="grid bg-black place-self-center p-2 w-[25%] grid-rows-2 text-white">
+        <div class="flex gap-2 items-center">
+          <mat-icon class='text-gray-300'>add_location</mat-icon>
+          <span class="text-gray-300 font-semibold tracking-wider">Add New Address</span>
+        </div>
+        <button class="place-self-center" type="button" mat-raised-button color="primary" (click)="openDialog()">Add</button>
+      </div>
+    </div>
+  </section>
+</main>

@@ -22,8 +22,8 @@
           </mat-panel-title>
           <p class="text-gray-200">₹400</p>
           <mat-panel-description>
-            <p class='text-gray-500'>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam qui, quaerat porro deleniti doloremque eveniet!
+            <p class="text-gray-500 line-clamp-1 hover:line-clamp-2">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores tenetur, deleniti officiis recusandae beatae cum.
             </p>
           </mat-panel-description>
         </div>
@@ -37,14 +37,20 @@
           <p class="text-white">{{ cat.category }}</p>
           <div class="flex flex-col">
             @for (ing of cat.ingredients; track $index) {
-            <mat-checkbox  color='primary'>{{ ing }}</mat-checkbox>
+            <mat-checkbox
+              color="primary"
+              (change)="handleCheckboxOnChange(ing)"
+              >{{ ing }}</mat-checkbox
+            >
             }
           </div>
         </div>
         }
       </div>
       <div class="button">
-        <button mat-flat-button color="primary">Add To Cart</button>
+        <button type="submit" mat-flat-button color="primary">
+          Add To Cart
+        </button>
       </div>
     </form>
   </mat-expansion-panel>
