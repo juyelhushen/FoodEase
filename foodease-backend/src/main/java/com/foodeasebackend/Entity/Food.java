@@ -29,6 +29,7 @@ public class Food extends BaseEntity {
 
     @ManyToOne
     private Restaurant restaurant;
+
     private boolean isAvailable;
     private boolean isNonVeg;
     private boolean isVegetarian;

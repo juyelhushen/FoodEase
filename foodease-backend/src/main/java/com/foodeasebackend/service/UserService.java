@@ -14,5 +14,6 @@ public interface UserService {
     ResponseEntity<AuthResponse> signup(SignupRequest request);
 
     ResponseEntity<AuthResponse> signIn(LoginRequest request);
+
     User findByUserId(Long userId) throws NoSuchElementException;
 }

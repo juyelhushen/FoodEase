@@ -38,4 +38,6 @@ public class AdminFoodController {
         Food food = foodService.changeAvailabilityStatus(id);
         return ResponseEntity.ok(food);
     }
+
+    
 }

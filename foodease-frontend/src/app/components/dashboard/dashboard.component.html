@@ -1,0 +1,20 @@
+<mat-drawer-container class="w-[100%] h-[90%] bg-gray-900">
+  <mat-drawer  mode="side" opened>
+    <mat-nav-list role="list">
+      @for (items of menuItem; track $index) {
+      <mat-list-item role="listitem" routerLink='/{{items.link}}' routerLinkActive>
+        <mat-icon class="text-gray-300" matListItemIcon>{{
+          items.icon
+        }}</mat-icon>
+        <span class="text-gray-300" matLine>{{ items.item }}</span>
+      </mat-list-item>
+      <mat-divider class="bg-gray-700" />
+      }
+    </mat-nav-list>
+  </mat-drawer>
+  <mat-divider class="bg-gray-500 my-2" role="separator" [vertical]="true" />
+  <mat-drawer-content class="p-10">
+    <router-outlet />
+  </mat-drawer-content>
+</mat-drawer-container>
+
